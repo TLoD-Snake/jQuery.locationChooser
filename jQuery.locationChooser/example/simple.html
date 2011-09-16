@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>jQuery.locationChooser usage example</title>
+		
+		<script language="JavaScript" type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+		<script language="JavaScript" type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+
+		<script language="JavaScript" type="text/javascript" src="../js/GoogleMapAdapter.js"></script>
+		<script language="JavaScript" type="text/javascript" src="../js/mapLocationChooser.js"></script>
+		<script language="JavaScript" type="text/javascript">
+			(function($){
+				$(function(){
+					$("div#canvas").mapLocationChooser({
+						hidables:[$('div#geocodePane')]
+					});
+				});
+			})(jQuery);			
+		</script>
+		<style type="text/css">
+			div#canvas{width:400px; height:300px; float:left;}
+			div#workspace{width:702px;}
+			div#geocodePane{float:left; width:300px; height:300px; overflow:scroll;}
+			.clear{clear:both;}
+			input.noborder{border:none;}
+		</style>
+	</head>
+	<body>
+		<div id="workspace">
+			<div id="mainControlSet"> 
+				<input type="button" id="mapEnableButton" value="Enable" />
+				<input type="button" id="mapCancelButton" value="Cancel" />
+				<input type="button" id="mapAcceptButton" value="Accept" />
+			</div>
+			
+			<div id="canvas"></div>
+			<div id="geocodePane" class="controlPane">			
+				<input type="text" id="mapGeocodeInput" /><input type="button" id="mapGeocodeButton" value="Geocode" />
+				<div id="mapGeolistContainer"></div>
+			</div>
+			<div class="clear"></div>
+			
+			<div>Point location:</div>
+			<div>Lat: <input type="text" id="mapLatInput" class="noborder" /></div>
+			<div>Lng: <input type="text" id="mapLngInput" class="noborder" /></div>
+			<div>Zoom: <input type="text" id="mapZoomInput" class="noborder" /></div>
+		</div>
+		
+		<h2>Some installation notes:</h2>
+			<p>- First step is to load jQuery and Google Maps libs. Then load Google Map Adapter from this distribution and mapLocationChooser extension itself.</p>
+			<p>- You can add any elements to hiddens list so they will appear only when pointing is enabled.</p> 
+	</body>
+</html>
