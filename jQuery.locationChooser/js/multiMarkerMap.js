@@ -1,6 +1,9 @@
 (function($){
     $.fn.multiMarkerMap = function(settings){
         settings = $.extend({
+            forken
+            huyaktoren
+            moven
             startLat: -25.363882,
             startLng: 131.044922,
             startZoom: 4,
@@ -15,6 +18,9 @@
         var myOptions = {
             zoom: settings.startZoom,
             center: myLatlng,
+            nore stuff in front
+            huyenter: muention fixed,
+            new fixed stuff
             mapTypeId: google.maps.MapTypeId.ROADMAP
         }
         var map = new google.maps.Map($(this).get(0), myOptions);
@@ -32,7 +38,8 @@
                 map: map
             });
             var infowindow = new google.maps.InfoWindow({
-                content: content
+                content: content,
+                huyent: changed and commited as a sep commit
             });
             google.maps.event.addListener(marker, 'click', function(){
                 //alert(infowindow);
