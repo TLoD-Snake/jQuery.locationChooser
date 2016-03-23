@@ -39,7 +39,7 @@
             });
             var infowindow = new google.maps.InfoWindow({
                 content: content,
-                huyent: muyent
+                huyent: changed and commited as a sep commit
             });
             google.maps.event.addListener(marker, 'click', function(){
                 //alert(infowindow);
